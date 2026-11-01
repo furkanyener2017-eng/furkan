@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Akıllı Çay Bardağı</title>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+<style>
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:#dce8f5;
+  font-family:Verdana,Arial,sans-serif;
+  color:#222;
+  min-width:1100px;
+}
+
+header {
+  background:linear-gradient(#268bd5,#07549a);
+  color:white;
+  text-align:center;
+  padding:25px;
+  border-bottom:5px solid #ff9900;
+}
+
+header h1 { font-size:34px; margin:5px; }
+
+.container {
+  width:1050px;
+  margin:25px auto;
+}
+
+.panel {
+  background:white;
+  border:1px solid #9bb8d5;
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:2px 2px 5px #aaa;
+}
+
+#player {
+  width:1000px;
+  height:600px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+ruffle-player {
+  width:1000px;
+  height:600px;
+}
+
+button {
+  background:#0875bd;
+  color:white;
+  border:0;
+  padding:12px 22px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+button:hover { background:#07549a; }
+
+.actions {
+  text-align:center;
+  margin-top:15px;
+}
+
+footer {
+  text-align:center;
+  padding:25px;
+  background:#123e70;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>☕ AKILLI ÇAY BARDAĞI</h1>
+<p>Orijinal Flash oyunu yeniden yayında!</p>
+</header>
+
+<div class="container">
+
+<div class="panel">
+<h2>☕ Akıllı Çay Bardağı'na Hoş Geldin!</h2>
+<p>Bilgisayarın aklından geçenleri tahmin edebilecek mi?</p>
+</div>
+
+<div class="panel">
+<h2>🎮 Akıllı Çay Bardağı</h2>
+
+<div id="player">
+<p style="color:white">Oyun yükleniyor...</p>
+</div>
+
+<div class="actions">
+<button onclick="fullscreen()">⛶ TAM EKRAN</button>
+<button onclick="location.reload()">↻ YENİDEN BAŞLAT</button>
+</div>
+</div>
+
+</div>
+
+<footer>
+Akıllı Çay Bardağı © 2026
+</footer>
+
+<script>
+window.RufflePlayer = window.RufflePlayer || {};
+
+window.addEventListener("load", function() {
+  const ruffle = window.RufflePlayer.newest();
+  const player = ruffle.createPlayer();
+
+  document.getElementById("player").innerHTML = "";
+  document.getElementById("player").appendChild(player);
+
+  player.style.width = "1000px";
+  player.style.height = "600px";
+
+  player.load({
+    url: "Main.swf",
+    allowScriptAccess: true
+  });
+});
+
+function fullscreen() {
+  const player = document.querySelector("ruffle-player");
+  if (player) player.requestFullscreen();
+}
+</script>
+
+</body>
+</html>
