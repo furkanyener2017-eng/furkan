@@ -3,92 +3,73 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flash Oyun Dünyası</title>
+<title>Akıllı Çay Bardağı</title>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
 <style>
 * { box-sizing:border-box; }
+
 body {
   margin:0;
   background:#dce8f5;
   font-family:Verdana,Arial,sans-serif;
   color:#222;
+  min-width:1100px;
 }
+
 header {
   background:linear-gradient(#268bd5,#07549a);
   color:white;
   text-align:center;
-  padding:25px 10px;
+  padding:25px;
   border-bottom:5px solid #ff9900;
 }
+
 header h1 { font-size:34px; margin:5px; }
-nav {
-  background:#123e70;
-  text-align:center;
-  padding:12px;
-}
-nav a {
-  color:white;
-  margin:12px;
-  text-decoration:none;
-  font-weight:bold;
-}
+
 .container {
-  max-width:1050px;
-  margin:20px auto;
-  padding:15px;
+  width:1050px;
+  margin:25px auto;
 }
+
 .panel {
   background:white;
   border:1px solid #9bb8d5;
-  padding:15px;
+  padding:18px;
   margin-bottom:18px;
   box-shadow:2px 2px 5px #aaa;
 }
-.games {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(165px,1fr));
-  gap:15px;
+
+#player {
+  width:1000px;
+  height:600px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.game {
-  background:#edf5ff;
-  border:2px solid #aac6e3;
-  text-align:center;
-  padding:12px;
-  cursor:pointer;
+
+ruffle-player {
+  width:1000px;
+  height:600px;
 }
-.game:hover {
-  border-color:#ff9900;
-  background:#fff4d9;
-}
-.cover {
-  height:95px;
-  background:linear-gradient(135deg,#268bd5,#123e70);
-  color:white;
-  display:grid;
-  place-items:center;
-  font-size:35px;
-}
+
 button {
   background:#0875bd;
   color:white;
   border:0;
-  padding:10px 20px;
+  padding:12px 22px;
   cursor:pointer;
+  font-weight:bold;
 }
-#player {
-  display:none;
+
+button:hover { background:#07549a; }
+
+.actions {
   text-align:center;
+  margin-top:15px;
 }
-#gameFrame {
-  width:100%;
-  height:550px;
-  background:#111;
-}
-#gameFrame object {
-  width:100%;
-  height:100%;
-}
+
 footer {
   text-align:center;
   padding:25px;
@@ -97,78 +78,64 @@ footer {
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>🎮 FLASH OYUN DÜNYASI</h1>
-<p>En güzel eski Flash oyunları burada!</p>
+<h1>☕ AKILLI ÇAY BARDAĞI</h1>
+<p>Orijinal Flash oyunu yeniden yayında!</p>
 </header>
 
-<nav>
-<a href="#">Ana Sayfa</a>
-<a href="#oyunlar">Oyunlar</a>
-</nav>
-
 <div class="container">
+
 <div class="panel">
-<h2>⭐ Hoş Geldin!</h2>
-<p>Eski internet oyunlarının keyfini çıkar!</p>
+<h2>☕ Akıllı Çay Bardağı'na Hoş Geldin!</h2>
+<p>Bilgisayarın aklından geçenleri tahmin edebilecek mi?</p>
 </div>
 
-<div id="player" class="panel">
-<h2 id="gameTitle">Oyun</h2>
-<div id="gameFrame"></div>
-<br>
-<button onclick="closeGame()">← Oyunlara Dön</button>
+<div class="panel">
+<h2>🎮 Akıllı Çay Bardağı</h2>
+
+<div id="player">
+<p style="color:white">Oyun yükleniyor...</p>
 </div>
 
-<div class="panel" id="oyunlar">
-<h2>🕹️ Oyun Arşivi</h2>
-<div class="games" id="games"></div>
+<div class="actions">
+<button onclick="fullscreen()">⛶ TAM EKRAN</button>
+<button onclick="location.reload()">↻ YENİDEN BAŞLAT</button>
 </div>
+</div>
+
 </div>
 
 <footer>
-Flash Oyun Dünyası © 2026
+Akıllı Çay Bardağı © 2026
 </footer>
 
 <script>
-const oyunlar = [
-  {ad:"Oyun 1",dosya:"oyun1.swf",ikon:"🎯"},
-  {ad:"Oyun 2",dosya:"oyun2.swf",ikon:"🚗"},
-  {ad:"Oyun 3",dosya:"oyun3.swf",ikon:"⚽"},
-  {ad:"Oyun 4",dosya:"oyun4.swf",ikon:"🧩"}
-];
+window.RufflePlayer = window.RufflePlayer || {};
 
-const liste = document.getElementById("games");
+window.addEventListener("load", function() {
+  const ruffle = window.RufflePlayer.newest();
+  const player = ruffle.createPlayer();
 
-oyunlar.forEach((oyun) => {
-  const kart = document.createElement("div");
-  kart.className = "game";
-  kart.innerHTML = `
-    <div class="cover">${oyun.ikon}</div>
-    <h3>${oyun.ad}</h3>
-    <button>OYNA</button>
-  `;
-  kart.onclick = () => openGame(oyun);
-  liste.appendChild(kart);
+  document.getElementById("player").innerHTML = "";
+  document.getElementById("player").appendChild(player);
+
+  player.style.width = "1000px";
+  player.style.height = "600px";
+
+  player.load({
+    url: "Main.swf",
+    allowScriptAccess: true
+  });
 });
 
-function openGame(oyun) {
-  document.getElementById("player").style.display="block";
-  document.getElementById("gameTitle").textContent=oyun.ad;
-  document.getElementById("gameFrame").innerHTML="";
-  const obj=document.createElement("object");
-  obj.setAttribute("data","games/"+oyun.dosya);
-  obj.setAttribute("type","application/x-shockwave-flash");
-  document.getElementById("gameFrame").appendChild(obj);
-  document.getElementById("player").scrollIntoView();
-}
-
-function closeGame() {
-  document.getElementById("gameFrame").innerHTML="";
-  document.getElementById("player").style.display="none";
+function fullscreen() {
+  const player = document.querySelector("ruffle-player");
+  if (player) player.requestFullscreen();
 }
 </script>
+
 </body>
 </html>
