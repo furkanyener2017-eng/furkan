@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<settings
+		videosPath			= "videos"
+		trackingDataPath	= "tracking_data"
+		introVideo			= "intro"
+		librarySwf			= "Library.swf"
+		aiServer			= "http://127.0.0.1:8000"
+		aiPath				= "Default.aspx"
+		idleVideoCount		= "4"
+	/>
+	<products>
+		<product
+			title			= "Yellow Label Tea"
+			text			= "120 yıllık çay tecrübesi Lipton Yellow Label Çay'da buluşuyor.-br-Türk damak tadına uygun en güzel çayları üretiyor."
+		/>
+		<product
+			title			= "Golden Ceylon Tea"
+			text			= "120 yıllık çay tecrübesi Lipton Golden Ceylon Çay'da buluşuyor.-br-Türk damak tadına uygun en güzel çayları üretiyor."
+		/>
+		<product
+			title			= "Earl Gray Tea"
+			text			= "120 yıllık çay tecrübesi Lipton Earl Gray Çay'da buluşuyor.-br-Türk damak tadına uygun en güzel çayları üretiyor."
+		/>
+		<product
+			title			= "Doğu Karadeniz"
+			text			= "120 yıllık çay tecrübesi Lipton Doğu Karadeniz Çayı'nda buluşuyor.-br-Türk damak tadına uygun en güzel çayları üretiyor."
+		/>
+		<product
+			title			= "English Breakfast"
+			text			= "120 yıllık çay tecrübesi Lipton English Breakfast Çay'da buluşuyor.-br-Türk damak tadına uygun en güzel çayları üretiyor."
+		/>
+	</products>
+	<howToPlay><![CDATA[<font face="Museo Sans 500">Öncelikle konsantre olun ve aklınızdan bir nesne tutun.<br/>Sonrasında Akıllı Çay Bardağı’nın tüm sorularına mümkün<br/>olduğunca doğru cevap verin. Akıllı Çay Bardağı size 20 soru<textformat leading="15"><br/>soracak ve tuttuğunuz şeyi bilmeye çalışacak.<br/>Bilirse sakın şaşırmayın, ne de olsa Akıllı Çay Bardağı.<br/>İyi eğlenceler!</textformat></font>]]></howToPlay>
+	<liptonWorld>
+		<item name="2011 - Yaprak" 							url="lipton_world/06" />
+		<item name="2011 - James Cook-br-Piramit Poşet Çay" url="lipton_world/05" />
+		<item name="2010 - Mirkelam" 						url="lipton_world/04" />
+		<item name="2010 - Dilara Koçak" 					url="lipton_world/03" />
+		<item name="2010 - Hulahop" 						url="lipton_world/02" />
+		<item name="2010 - Görevimiz Tehlike" 				url="lipton_world/01" />
+	</liptonWorld>
+	<saglik><![CDATA[<font color="#ed5800">Çayın tarihi ne kadar eskiye dayanıyor?</font>
+Çay 5.000 yıldır kullanılan bir içecek. İlk olarak Çinliler tarafından keşfediliyor ve uzun bir süre ilaç olarak kullanılıyor. Daha sonra 6.yy da Japonya, çay ile tanışıyor ve çay ritüeli önem kazanıyor. 
+Hindistan ve Endonezya'ya ardından da İngiltere'ye geçişi 1600'lü yıllara denk geliyor. 1800'lü yılların sonunda Thomas Lipton çayı paketleyerek satan ilk kişi oluyor.
+Dünyada Türkiye'nin aksine bardak poşet ve demlik poşet kullanılıyor. Türkiye, dünyanın en çok çay içen ülkesi.  Çayın Türkiye'deki tarihi , 1800 lü yılların sonunda 'Çay Risaliyesi' isimli bir kitaba  kadar gidiyor ama ilk üretim 1924 yılında Rize'de gerçekleşmiş.
+<font color="#ed5800">Poşet çayların bir yararı veya zararı var mı? Poşette olması tadını artırır mı azaltır mı?</font>
+Günlük bardak poşet çaylar hayatımızda oldukça fazla yer alıyor çünkü çok pratik. Poşetin içini açıp baktığınız zaman küçük çay parçacıkları görüyorsunuz. Bunlar %100 doğal çay yapraklarının  ufak parçalar haline getirilmesinden oluşuyor. Ufak parçalar haline getirilmesinin sebebi, çay yapraklarına  sıcak suyun temas ettiği yüzey ne kadar fazla olursa, çay o kadar hızlı bir şekilde suyun içine demini ve rengini bırakıyor. Çay ne kadar kaliteli ise suyun içine rengini bırakma hızı da o kadar yüksek oluyor. Doğallık tarafına bakarsak, Lipton poşet çayların içindeki çayın %100 doğal çay yapraklarından oluştuğunu söyleyebiliriz. Hiçbir şekilde renklendirici, boya gibi herhangi bir farklı madde içermiyor. Çay poşetleri ise yine doğal ağaç liflerinden üretiliyor.
+<font color="#ed5800">Çay sağlıklı bir içecek mi? İnsanlara bir yararı var mı?</font>
+Çay, doğru bir şekilde tüketildiği zaman insanlara önemli faydalar sağlıyor. Çayın içinde bulunan Teanin, doğal bir aminoasit, konsantrasyonu artırdığını ve odaklanmayı güçlendirdiğini gösteren bilimsel araştırmalar var. Hem yeşil çayın hem siyah çayın elde edildiği camellia sinensis bitkisi içerdiği Flavonoid'ler nedeniyle doğal bir antioksidan.
+Bu antioksidan etki aynı zamanda antibakteriyel özelliği sebebiyle diş sağlığına da olumlu etkiler yapabiliyor.Bu iki özelliğinin yanı sıra kalp ve düzenli çay tüketimi arasındaki olumlu ilişki de yine araştırmacılar tarafından ilgi odağı haline gelmiş durumda. Çay, günlük sıvı tüketiminde de önemli bir kaynak. Eğer şeker ve süt ilave edilmeden kullanılırsa kilo kontrol programlarının içinde de rahatlıkla yer alabiliyor.]]></saglik>
+</data>
