@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/Default.aspx",
+      "destination": "/api/default.aspx"
+    },
+    {
+      "source": "/videos/:id.flv",
+      "destination": "/api/default.aspx?video=:id"
+    }
+  ]
+}
